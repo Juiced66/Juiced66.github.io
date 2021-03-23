@@ -471,6 +471,9 @@ em{
 				justify-content: center;
 								
 			}
+			.flex-container>i{
+				text-shadow: -2px 0px 0px var(--black);
+			}
 			.back>.flex-container{
 				transform: rotateZ(180deg) rotateY(180deg);
 			}
