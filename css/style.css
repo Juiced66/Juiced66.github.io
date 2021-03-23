@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+
+
+:root {
+    /* Les variables permettent de stoquer des valeurs utilisables plus loin */
+    --fond:	#87CEFA;
+    --couleur-claire: azure;
+    --black:#333;
+    --degrade:linear-gradient(to right, var(--fond),  var(--couleur-claire));
+    --degrade-inverse:linear-gradient(to left, var(--fond),  var(--couleur-claire));
+}
+/*          --- Style généraux ---            */
+
+body{
+
+	background-color: var(--fond);
+	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	line-height: 1.3em;
+	margin-bottom: 15px;
+
+}
+
+header{
+
+	align-items: center;
+	background-color:  var(--couleur-claire);
+	display: flex;
+	flex-direction: column;
+	font-size: 25px;
+	height: 50px;
+	margin-bottom: 10px;
+	
+}
+
+h1,h2,h3,h4,h5,h6,.h1,button{
+
+	font-family: 'Reggae One', cursive;
+	font-weight: 400; 
+
+}
+
+.h1, h1{
+
+	flex-grow: 1;
+
+}
+
+h1{
+
+	font-weight: 700;
+
+}
+
+h2,
+button{
+
+	background-color:  var(--couleur-claire);
+	font-size: 18px;
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+
+}
+
+div{
+
+	margin-bottom: 20px;
+
+}
+
+li{
+
+	line-height: 2em;
+	padding: 10px;
+
+}
+
+ol>li{
+	
+	font-size: 0.8em;
+	padding: 5px;
+
+}
+
+span{
+
+	font-style: italic;
+}
+
+i{
+	 
+    margin-right: 5px;
+	text-shadow: -2px 0px 0px var(--couleur-claire);
+	vertical-align: middle;
+}
+
+/*          --- Framework ---            */
+
+.hidden,.hidden-button{
+
+	display: none;
+
+}
+
+.hoverRotate:hover, .hoverRotate:focus{
+
+	transform: rotateZ(1turn);
+	transition: transform 1s ;
+
+}
+
+						/* Generateur de bulles */
+
+
+body>span{
+	pointer-events: none;
+	animation: animate 4s linear infinite;
+	bottom:-200%;
+	background: transparent;
+	border-radius:50%;
+	box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+	position: absolute;
+
+}
+
+body>span:before{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius:50%;
+}
+
+#surprise{
+	 user-select: none;
+}
+
+@keyframes animate{
+	0%{
+		transform: translateY(0%);
+		opacity: 1
+	}
+	99%{
+		opacity: 1
+	}
+	100%{
+		transform: translateY(-10000%);
+		opacity: 0
+	}
+
+}
+/*                         fin bulles                                   */
+
+/*          --- Style ---            */
+/* -- Tous les écrans (Mobile first) -- */
+
+header{
+
+	 	background-image:var(--degrade);
+		border-radius: 5px;
+		box-shadow: -2px 0px 0px var(--black),2px 0px 0px var(--black);
+
+ }
+h2,
+button{
+
+	background:var(--degrade) ;
+	border-radius: 5px;
+	box-shadow: -2px 0px 0px #333,2px 0px 0px #333;
+	font-size: 18px;
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+
+}
+
+main,footer{
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%
+
+}
+
+	.photo{		
+
+		border: 1px solid var(--black);
+		border-radius: 50%;
+		box-shadow:-4px 6px 7px var(--black);
+		margin-left: auto;
+		margin-right: auto;
+	    overflow: hidden;
+	    width: 150px;
+
+	}
+
+	.contact{
+
+		margin-bottom: 30px;
+
+	}
+
+	.accroche{
+
+		display: block;
+		font-size: 1.2em;
+    	font-style: italic;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-bottom: 40px;
+	    width:40%;
+	}
+
+
+	.formations{
+		margin-bottom: 10px;
+	}
+.timeline{
+	font-size: 1em;
+	margin-right: 5px;
+
+}
+.poste{
+	font-size: 1.2em;
+}
+em{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.joke:hover {
+
+  background-color:  var(--couleur-claire);
+  margin-right: 40%;
+  transition: all 1s ease-in-out;
+
+}
+
+.joke:hover .truth1 span,
+.joke:hover .truth2 span,
+.joke:hover .truth3 span {
+
+  display: none;
+
+}
+
+.joke:hover .truth1:after {
+
+  content: "Programmer :-)";
+
+}
+.joke:hover .truth2:after {
+
+  content: "Jeux vidéos :-)";
+
+}
+.joke:hover .truth3:after {
+
+  content: "Tester des trucs :-)";
+
+}
+
+
+						/* -- Tablettes et plus -- */
+
+
+
+@media ( min-width: 768px ){
+	body>span{
+		bottom:-80%;
+	}
+	
+
+	.hidden-button{
+
+	display: block;
+
+	}
+
+	i{
+
+		font-size: 2em;
+
+	}
+		.flex-container>i{
+
+		color:var(--couleur-claire);
+
+		}
+
+	header{
+		
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 40px;
+		width: 60%;
+
+	}
+
+	.top-section{
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		
+	}
+		#fleche-bas{
+
+			border:4px solid var(--black);
+			display: inline-block;
+			font-weight: bold;
+			height: 25px;
+			margin:0 0 0 20px;
+			transition: transform 1s;
+			width: 25px;
+		}
+			#fleche-bas.close{
+
+	      	transform: rotateZ(2.5turn);
+	    	}
+
+		.flex-competences{
+
+			display: flex;
+			flex-direction: column;
+		}
+
+	      button,
+	      button::after {
+
+	      transition: all 0.3s;
+
+	      }
+
+	      button {
+
+	      background: none;
+	      border: 4px solid  var(--couleur-claire);
+	      display: block;
+	      position: relative;
+
+	      }
+
+	      button::before,
+	      button::after {
+
+	      background:var(--degrade);
+	      content: '';
+	      position: absolute;
+	      z-index: -1;
+
+	      }
+
+	      button:hover {
+
+	      color: var(--black);
+
+	      }
+
+	      .button::after {
+
+	      height: 0;
+	      left: 50%;
+	      top: 50%;
+	      width: 0;
+
+	      }
+
+	      .button:hover::after {
+
+	      height: 100%;
+	      left: 0;
+	      top: 0;
+	      width: 100%;
+
+	    }
+
+
+
+		.photo{
+
+			align-self: flex-start;			
+		    height: 220px;
+		    overflow: hidden;
+		    width: 220px;
+
+		}
+	
+	.middle-section{
+
+		display: flex;
+	}
+
+	.bottom-section{
+
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+		.parcours-pro{
+
+			flex-basis: 45%;
+
+		}
+
+		.formations{
+
+			flex-basis: 45%;
+
+		}
+
+	footer{
+
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+		.loisirs{
+
+			flex-basis: 45%;
+
+		}
+
+		.infos-sup{
+
+			flex-basis: 45%;
+
+		}
+/*               TechnoCube                  */
+	.container-cube {
+
+		height: 120px;
+		margin: 75px auto 30px;
+		perspective: 1000px;
+		width: 120px;
+
+	}
+
+		.cube{
+
+			animation: spin 18s infinite ease-in-out; 
+			height: 100%;
+			position: relative;
+			transform-style: preserve-3d;
+			width: 100%;
+
+		}
+
+		.face{
+
+			height: 120px;
+			opacity: .80;
+			position: absolute;
+			width: 120px;
+			
+		}
+
+			.flex-container{
+
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				justify-content: center;
+								
+			}
+
+						.top{
+				animation: spintop 3s forwards linear;
+				background-color: #8993be;
+
+
+			}
+
+			.bottom{
+				animation: spinbottom 3s forwards linear;
+				background-color: #f9dc5c;
+
+			}
+			.right{
+				animation: spinright 3s forwards linear;
+				background-color: #263de3;
+
+			}
+			.left{
+				animation: spinleft 3s forwards linear;
+				background-color: #dd1b16;
+
+
+			}
+
+			.front{
+	
+				animation: spinfront 3s forwards linear;
+				background-color: #e33c26;
+
+
+			}
+
+			.back{
+				animation: spinback 3s forwards linear;
+				background-color: #444140;
+				
+
+			}
+
+			@keyframes spintop{
+				from {
+				transform: rotateX(0) translateZ(0);
+			}
+				to{
+				transform: rotateX(90deg) translateZ(60px);
+				}
+			}
+
+			@keyframes spinbottom{
+				from {
+				transform: rotateX(0) translateZ(0);
+			}
+				to{
+				transform: rotateX(-90deg) translateZ(60px);
+				}
+			}
+
+			@keyframes spinfront{
+				from {
+				transform: rotateX(0deg) translateZ(0);			
+				}
+				to{
+				transform: rotateX(0deg) translateZ(60px);				
+				}
+			}
+
+			@keyframes spinback{
+				from {
+				transform: rotateX(0) translateZ(0);			
+				}
+				to{
+				transform: rotateX(-180deg) translateZ(60px);				
+				}
+			}
+
+			@keyframes spinleft{
+				from {
+				transform: rotateY(-0) translateZ(0);			
+				}
+
+				to{
+				transform: rotateY(-90deg) translateZ(60px);				
+				}
+			}
+
+			@keyframes spinright{
+				from {
+				transform: rotateY(0) translateZ(0);
+				}
+				to{
+				transform: rotateY(90deg) translateZ(60px);				
+				}
+
+			}
+
+			@keyframes spin {
+		from{
+			transform:rotateX(0deg) rotateY(0deg)
+		}
+		to{
+			transform:rotateX(360deg) rotateY(720deg)
+		}
+	}
+/*                Fin technoCube           */
+
+
+							/* -- Bureaux et plus -- */
+@media ( min-width: 992px ){
+
+	.top-section{
+
+		justify-content: space-between;
+		width: 75%;
+
+	}
+
+	.photo{
+
+		align-self: flex-start;
+	    min-height: 150px;
+		min-width: 150px;
+	    overflow: hidden;
+
+	}
+
+	.contact{
+
+		position: absolute;
+		right:50px;
+		top:90px;	
+
+	}
+
+	.accroche{
+
+		position: absolute;
+		top:350px;
+		right:150px;
+
+	}
+	
+}
+
+
+
