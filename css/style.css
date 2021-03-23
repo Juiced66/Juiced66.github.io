@@ -489,7 +489,8 @@ em{
 				background-color: #263de3;
 
 			}
-			.left{
+			
+			.back{
 				animation: spinleft 3s forwards linear;
 				background-color: #dd1b16;
 
@@ -504,7 +505,7 @@ em{
 
 			}
 
-			.back{
+			.left{
 				animation: spinback 3s forwards linear;
 				background-color: #444140;
 				
@@ -525,7 +526,7 @@ em{
 				transform: rotateX(0) translateZ(0);
 			}
 				to{
-				transform: rotateX(-90deg) translateZ(60px);
+				transform: rotateX(-90deg) translateZ(60px) ;
 				}
 			}
 
@@ -538,22 +539,22 @@ em{
 				}
 			}
 
-			@keyframes spinback{
+			@keyframes spinleft{
 				from {
-				transform: rotateX(0) translateZ(0);			
+				transform: rotateX(0) translateZ(0) rotateY(0);			
 				}
 				to{
-				transform: rotateX(-180deg) translateZ(60px);				
+				transform: rotateX(-180deg) translateZ(60px) rotateY(180deg);				
 				}
 			}
 
-			@keyframes spinleft{
+			@keyframes spinback{
 				from {
-				transform: rotateY(-0) translateZ(0);			
+				transform: rotateY(-0) translateZ(0) ;			
 				}
 
 				to{
-				transform: rotateY(-90deg) translateZ(60px);				
+				transform: rotateY(-90deg) translateZ(60px) ;				
 				}
 			}
 
