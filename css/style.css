@@ -471,6 +471,9 @@ em{
 				justify-content: center;
 								
 			}
+			.back>.flex-container{
+				transform: rotateZ(180deg) rotateY(180deg);
+			}
 
 						.top{
 				animation: spintop 3s forwards linear;
