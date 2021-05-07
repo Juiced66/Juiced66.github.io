@@ -11,7 +11,7 @@ function createBubble(){
 
 	createElement.style.width =  size + "px"
 	createElement.style.height =  size + "px"
-	createElement.style.left = Math.random()* (innerWidth-60) + "px"
+	createElement.style.left = Math.random()* (innerWidth-90) + "px"
 	body.appendChild(createElement)
 	
 	let t=setTimeout(() =>{
