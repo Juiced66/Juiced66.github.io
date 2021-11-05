@@ -1,21 +1,25 @@
 import "./App.css";
-import Header from "./components/Header";
-import TechList from "./components/Techlist";
-import Contact from "./components/Contact";
-import ExperiencesList from "./components/ExperiencesList";
-import FormationsList from "./components/FormationsList";
-// import Parcours from "./components/Parcours";
-// import Projects from "./components/Projects";
+import Header from "./components/Header/Header";
+import TechList from "./components/Techs/Techlist";
+import Contact from "./components/Contact/Contact";
+import Home from "./components/Home/Home";
+import ExperiencesList from "./components/Experiences/ExperiencesList";
+import FormationsList from "./components/Formations/FormationsList";
+import ProjetsList from "./components/Projets/ProjetsList";
+import Title from "./components/Utils/Title";
 // import More from "./components/More";
 
 import { useState } from "react";
-import Title from "./components/Title";
-import Photo from "./components/Photo";
+
 
 
 function App() {
   //I don't have an online API so I first set my initialState in an array
   const pannels = [
+    {
+      title:'Acceuil',
+      pannelValue: <Home />
+    },
     {
       title: "Technologies/Frameworks",
       pannelValue: <TechList />,
@@ -34,7 +38,7 @@ function App() {
     },
     {
       title: "Projets",
-      //pannelValue : <Project />
+      pannelValue : <ProjetsList />
     },
     {
       title: "Infos Supplémentaires",
@@ -65,7 +69,6 @@ function App() {
           );
         })}
       </nav>
-      <Photo />
       <div>
         {<Title value={title} />}
         {pannelValue}

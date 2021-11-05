@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from '../img/Avatar.png'
+import avatar from '../../img/Avatar.png'
 
 export default function Photo() {
     return (
