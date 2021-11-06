@@ -1,5 +1,12 @@
 import React from "react";
 import Experience from "./Experience";
+import NavItems from "../nav/NavItems";
+import meetdeal from "../../img/meetdeal.png";
+import haxeDirect from "../../img/haxeDirect.png";
+import pyrescom from "../../img/pyrescom.png";
+import resto from "../../img/resto.jpg";
+
+import { useState } from "react";
 
 export default function ExperiencesList() {
   const experiences = [
@@ -12,6 +19,7 @@ export default function ExperiencesList() {
         "Projet : ChatBot arborescent à l'aide d'une API (React)",
         "Travaux supplémentaires : MaJ du style d'un site web existant (Responsive, Mobile First)",
       ],
+      image: meetdeal,
     },
     {
       poste: "Technicien Electronique Itinérant (France)",
@@ -21,7 +29,9 @@ export default function ExperiencesList() {
         "Programation, installation",
         "Maintenance à distance/sur site",
       ],
+      image: pyrescom,
     },
+
     {
       poste: "Technicien Caisse enregistreuse et sécurité (Occitanie)",
       date: "Novembre 2017 - Octobre 2019",
@@ -31,6 +41,7 @@ export default function ExperiencesList() {
         "Installation dans les commerces, maintenance",
         "Paramétrage et installation de systèmes de sécurité (Alarme, vidéo)",
       ],
+      image: haxeDirect,
     },
     {
       poste: "Service, cuisine, management",
@@ -41,20 +52,56 @@ export default function ExperiencesList() {
         "Pour y arriver, j'ai parcouru la France et travaillé a tout types de postes",
         "J'ai arrêté quand mon père a décidé de vendre son restaurant !",
       ],
+      image: resto,
     },
   ];
+
+  const [value, setValue] = useState(0);
+
+  const { poste, date, entreprise, description, image } = experiences[value];
+
   return (
-    <div>
-      {experiences.map((experience) => {
-        return (
+    <>
+      <div className="subMenu hidden-mobile">
+        {experiences.map((exp, index) => {
+          return (
+            <NavItems
+              key={`navItem-${index}`}
+              value={exp.entreprise}
+              clickHandler={() => setValue(index)}
+            />
+          );
+        })}
+      </div>
+      <div className="pannel-data card">
+        <div className="center flex">
+          <div
+            onClick={() => {
+              if (value > 0) setValue(value - 1);
+            }}
+          >
+            🢀
+          </div>
+          <div
+            onClick={() => {
+              value < experiences.length - 1
+                ? setValue(value + 1)
+                : setValue(0);
+            }}
+          >
+            🢂
+          </div>
+        </div>
+        <div className='column space-around'>
           <Experience
-            poste={experience.poste}
-            date={experience.date}
-            entreprise={experience.entreprise}
-            description={experience.description}
+            poste={poste}
+            date={date}
+            entreprise={entreprise}
+            description={description}
+            image={image}
           />
-        );
-      })}
-    </div>
+        </div>
+      </div>
+    </>
   );
 }

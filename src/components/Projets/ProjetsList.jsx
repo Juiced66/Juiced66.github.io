@@ -29,11 +29,13 @@ export default function ProjetsList() {
       preview : previewCube
     }, 
   ];
+
   return (
-    <div>
-      {projets.map((projet) => {
+    <div className='card'>
+      {projets.map((projet,index) => {
         return (
           <Projet
+            key = {'projet'+index}
             titre={projet.titre}
             repo={projet.repo}
             details={projet.details}

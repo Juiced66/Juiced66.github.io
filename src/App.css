@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  /* Les variables permettent de stocker des valeurs utilisables plus loin */
+  --nav:#006494;
+  --fond: #87cefa;
+  --black: #333;
+  --couleur-claire: #f0ffff;
+  --couleur-claire-transp: #f0ffff77;
+  --degrade: linear-gradient(to right, var(--fond), var(--couleur-claire));
+  --degrade-inverse: linear-gradient(
+    to left,
+    var(--fond),
+    var(--couleur-claire)
+  );
+}
+/*          --- Style généraux ---            */
+a {
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+body {
+  background-color: var(--fond);
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  align-items: center;
+  background-color: var(--couleur-claire);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  font-size: 1.3em;
+  /* height: 50px; */
+  margin-bottom: 10px;
+  padding:10px 0 10px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}
+.fake-header{
+    margin-top: 130px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+button {
+  font-family: "Reggae One", cursive;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.h1,
+h1 {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2,
+button {
+  background: var(--couleur-claire);
+  border-radius: 5px;
+  box-shadow: -2px 0px 0px #333, 2px 0px 0px #333;
+  font-size: 18px;
+  margin: 10px 10px 10px 10px;
+  padding: 5px;
+  text-align: center;
+  
+}
+
+.pannel-container {
+  width: 70%;
+  margin: 0 auto;
+  min-height: 75vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card{
+    height: 100%;
+    width: 100%;
+    background: var(--couleur-claire-transp);
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.pannel-data{
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.space-around{
+    justify-content: space-around;
+}
+li {
+  font-style: italic;
+
+  font-size: 0.8em;
+}
+p {
+
+  font: italic 0.8em;
+}
+ol > li {
+  padding: 5px;
+}
+
+span {
+  font-style: italic;
+}
+svg {
+  margin-right: 5px;
+  text-shadow: -2px 0px 0px var(--couleur-claire);
+  vertical-align: middle;
+}
+.photo-frame {
+  width: 40vw;
+  margin: 25px auto;
+  
+}
+.photo-frame-entreprise{
+    width: 150px;
+    margin: 0 auto;
+}
+.photo-entreprise{
+    width: 150px;
+}
+.photo {
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 40vw;
+}
+.sub-nav{
+    margin: 0 30px;
+}
+.menu-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 0.8em;
+  width: 40px;
+  height: 40px;
+  border: solid black;
+  padding: 5px;
+  margin-right: 18px;
+}
+.barre {
+  min-height: 3px;
+  width: 80%;
+  background-color: black;
+}
+.cross {
+  min-height: 3px;
+  width: 80%;
+  background-color: black;
+  transform-origin: 0px;
+  transform: rotateZ(50%);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.center {
+  margin-top: 10px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  
+}
+.center > * {
+  user-select: none;
+  cursor: pointer;
+}
+
+.left-arrow,
+.right-arrow {
+  position: fixed;
+  top: 50%;
+  font-size: 2em;
+  user-select: none;
+  cursor: pointer;
+}
+.left-arrow {
+  left: 5px;
+}
+.right-arrow {
+  right: 5px;
+}
+.hidden-mobile {
+  display: none;
+}
+.flex {
+  display: flex;
+}
+.tech {
+  margin-bottom: 20px;
+}
+img {
+  margin: 0 auto;
+  max-width: 50vw;
+}
+.container-cube {
+  height: 120px;
+  margin: 50px auto 30px;
+  perspective: 1000px;
+  width: 120px;
+}
+
+.cube {
+  animation: spin 18s infinite ease-in-out;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.face {
+  height: 120px;
+  opacity: 0.8;
+  position: absolute;
+  width: 120px;
+}
+
+.flex-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.flex-container > i {
+  text-shadow: -2px 0px 0px var(--black);
+}
+.back > .flex-container {
+  transform: rotateZ(180deg) rotateY(180deg);
+}
+
+.top {
+  animation: spintop 2s forwards linear;
+  background-color: #8993be;
+}
+
+.bottom {
+  animation: spinbottom 2s forwards linear;
+  background-color: #f9dc5c;
+}
+.right {
+  animation: spinright 2s forwards linear;
+  background-color: #263de3;
+}
+
+.back {
+  animation: spinleft 2s forwards linear;
+  background-color: #dd1b16;
+}
+
+.front {
+  animation: spinfront 2s forwards linear;
+  background-color: #e33c26;
+}
+
+.left {
+  animation: spinback 2s forwards linear;
+  background-color: #61dbfb;
+}
+
+@keyframes spintop {
+  from {
+    transform: rotateX(0) translateZ(0);
+  }
+  to {
+    transform: rotateX(90deg) translateZ(60px);
+  }
+}
+
+@keyframes spinbottom {
+  from {
+    transform: rotateX(0) translateZ(0);
+  }
+  to {
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+}
+
+@keyframes spinfront {
+  from {
+    transform: rotateX(0deg) translateZ(0);
+  }
+  to {
+    transform: rotateX(0deg) translateZ(60px);
+  }
+}
+
+@keyframes spinleft {
+  from {
+    transform: rotateX(0) translateZ(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(-180deg) translateZ(60px) rotateY(180deg);
+  }
+}
+
+@keyframes spinback {
+  from {
+    transform: rotateY(-0) translateZ(0);
+  }
+
+  to {
+    transform: rotateY(-90deg) translateZ(60px);
+  }
+}
+
+@keyframes spinright {
+  from {
+    transform: rotateY(0) translateZ(0);
+  }
+  to {
+    transform: rotateY(90deg) translateZ(60px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(720deg);
+  }
+}
+@media (min-width : 768px) {
+    .pannel-container {
+        min-height: 85vh; 
+    }
+    .photo-entreprise{
+        width: 300px;
+    }
+    .photo-frame-entreprise{
+        width: 300px;
+    }
+    .card{
+        position: relative;
+        height: 80%;
+        margin-bottom: 50px;
+    }
+    .center{
+        left: 43%;
+        bottom : 5px;
+    }
+    .photo-frame{
+        margin: 10vh auto;
+        
+    }
+
+    .face{
+        width: 180px;
+        height: 180px;
+    }
+    @keyframes spintop {
+        from {
+          transform: rotateX(0) translateZ(0);
+        }
+        to {
+          transform: rotateX(90deg) translateZ(90px);
+        }
+      }
+      
+      @keyframes spinbottom {
+        from {
+          transform: rotateX(0) translateZ(0);
+        }
+        to {
+          transform: rotateX(-90deg) translateZ(90px);
+        }
+      }
+      
+      @keyframes spinfront {
+        from {
+          transform: rotateX(0deg) translateZ(0);
+        }
+        to {
+          transform: rotateX(0deg) translateZ(90px);
+        }
+      }
+      
+      @keyframes spinleft {
+        from {
+          transform: rotateX(0) translateZ(0) rotateY(0);
+        }
+        to {
+          transform: rotateX(-180deg) translateZ(90px) rotateY(180deg);
+        }
+      }
+      
+      @keyframes spinback {
+        from {
+          transform: rotateY(-0) translateZ(0);
+        }
+      
+        to {
+          transform: rotateY(-90deg) translateZ(90px);
+        }
+      }
+      
+      @keyframes spinright {
+        from {
+          transform: rotateY(0) translateZ(0);
+        }
+        to {
+          transform: rotateY(90deg) translateZ(90px);
+        }
+      }
+    
+}
+

@@ -3,7 +3,7 @@ import Photo from '../Utils/Photo';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Photo />
             <p>
                 Developpeur novice et motivé souhaite mettre ses compétences 
@@ -16,7 +16,7 @@ const Home = () => {
             <p>
                 Bienvenue sur ma page et bonne navigation !
             </p>
-        </div>
+        </>
     );
 }
 

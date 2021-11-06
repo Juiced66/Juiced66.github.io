@@ -1,5 +1,6 @@
 import React from "react";
 import Tech from "./Tech";
+import TechnoCube from "./Technocube";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
@@ -37,10 +38,13 @@ export default function TechList() {
   ];
 
   return (
-    <div>
-      {techs.map((tech, index) => {
-        return <Tech value={tech.value} icon={tech.icon} key={index} />;
-      })}
-    </div>
+    <>
+      <div>
+        {techs.map((tech, index) => {
+          return <Tech value={tech.value} icon={tech.icon} key={index} />;
+        })}
+      </div>
+      <TechnoCube />
+    </>
   );
 }

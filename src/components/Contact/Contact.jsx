@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEnvelopeSquare, faPhone} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 export default function Contact() {
     const contactInfo =[
         {
             champs : 'mail',
-            valeur : 'julien.decosse30630@gmail.com',
+            valeur : 'Envoyez moi un mail !',
             link:'mailto:julien.decosse30630@gmail.com',
             icone : <FontAwesomeIcon icon={faEnvelopeSquare}/>
         },
@@ -18,8 +18,15 @@ export default function Contact() {
             icone : <FontAwesomeIcon icon={faPhone}/>
         },
         {
-            champs : 'git',
-            valeur : 'https://github.com/Juiced66/Juiced66',
+            champs : 'LinkedIn',
+            valeur : 'Julien Decosse',
+            link : 'https://www.linkedin.com/in/julien-decosse-83697a211',
+            icone : <FontAwesomeIcon icon={faLinkedin}/>
+        },
+
+        {
+            champs : 'Github',
+            valeur : 'Juiced66',
             link : 'https://github.com/Juiced66/Juiced66',
             icone : <FontAwesomeIcon icon={faGithub}/>
         }
@@ -27,12 +34,12 @@ export default function Contact() {
     ]
     
     return (
-        <div>
+        <>
             {
                contactInfo.map((contact) => {
                 return (
-                    <a href={contact.link}>
-                        <div key = {contact.champs} >
+                    <a href={contact.link}  key = {contact.champs}>
+                        <div >
                             {contact.icone}
                             {contact.valeur}
                         </div>
@@ -40,6 +47,6 @@ export default function Contact() {
                 )
                }) 
             }
-        </div>
+        </>
     )
 }
