@@ -15,7 +15,6 @@ import Translate from "./components/Utils/Translate";
 
 function App() {
   //window size tracking
-
   const [width, setWindowWidth] = useState(0);
   useEffect(() => {
     updateDimensions();
@@ -66,15 +65,28 @@ function App() {
   const [value, setValue] = useState(0);
   const { title, pannelValue } = pannels[value];
 
+  // let [navStyle, setNavStyle] = useState({width : '100%'})
+  
+  // useEffect(() => {
+  //   if(!menuVisible) setNavStyle({width:'100%'})
+  //   if(menuVisible){
+  //     const timer = setTimeout(() => {
+  //       setNavStyle({width:"50%"}) 
+  //     }, 1000);
+  //     return () => clearTimeout(timer)
+  //     }
+  // }, [menuVisible]);
+  
+  
   return (
-    <div className="App">
+    <div className="App" style={{overflowY : 'hidden'}}>
       <Header
         clickHandler={() => toggleMenu()}
         open={menuVisible}
         mobile={width <= 768}
       />
       <div className="fake-header"></div>
-      {width <= 640 && (
+      {/* {width <= 768 && (
         <Translate visible={menuVisible}>
           <nav>
             {pannels.map((pannel, index) => {
@@ -93,16 +105,17 @@ function App() {
             })}
           </nav>
         </Translate>
-      )}
+      )} */}
 
-      {width <= 768 && width >= 640 && (
-        <Translate visible={menuVisible} duration={500} viewportWidth={50}>
+      {width <= 768 && (
+        <Translate visible={menuVisible} duration={1000} viewportWidth={50}>
           <nav>
             {pannels.map((pannel, index) => {
               return (
                 <Translate
                   visible={menuVisible}
                   duration={500}
+                  
                   
                 >
                   <NavItems

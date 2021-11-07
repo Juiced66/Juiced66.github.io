@@ -129,7 +129,7 @@ table {
 
 :root {
   /* Les variables permettent de stocker des valeurs utilisables plus loin */
-  --nav:#808080;
+  --nav: #808080;
   --fond: #87cefa;
   --black: #333;
   --couleur-claire: #f0ffff;
@@ -157,22 +157,17 @@ body {
 }
 
 header {
-  align-items: center;
   background-color: var(--couleur-claire);
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
   font-size: 1.3em;
-  /* height: 50px; */
   margin-bottom: 10px;
-  padding:10px 0 10px 10px;
+  padding: 10px 0 10px 10px;
   position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
 }
-.fake-header{
-    margin-top: 130px;
+.fake-header {
+  margin-top: 130px;
 }
 
 h1,
@@ -208,7 +203,7 @@ button {
   text-align: center;
   transition: all 2s;
 }
-button{
+button {
   width: 100%;
 }
 .pannel-container {
@@ -221,30 +216,29 @@ button{
   justify-content: space-evenly;
   align-items: center;
 }
-.card{
-    height: 100%;
-    width: 100%;
-    background: var(--couleur-claire-transp);
-    border-radius: 20px;
-    padding: 5px;
-    margin-bottom: 20px;
+.card {
+  height: 100%;
+  width: 100%;
+  background: var(--couleur-claire-transp);
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 20px;
 }
-.pannel-data{
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
+.pannel-data {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
-.column{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-.space-around{
-    justify-content: space-around;
+.space-around {
+  justify-content: space-around;
 }
 li {
   font-style: italic;
@@ -252,7 +246,6 @@ li {
   font-size: 0.8em;
 }
 p {
-
   font: italic 0.8em;
 }
 ol > li {
@@ -270,22 +263,21 @@ svg {
 .photo-frame {
   width: 50vw;
   margin: 10px auto;
-  
 }
-.photo-frame-entreprise{
-    width: 150px;
-    margin: 0 auto;
+.photo-frame-entreprise {
+  width: 150px;
+  margin: 0 auto;
 }
-.photo-entreprise{
-    width: 150px;
+.photo-entreprise {
+  width: 150px;
 }
 .photo {
   border-radius: 50%;
   margin: 0 auto;
   max-width: 50vw;
 }
-.sub-nav{
-    margin: 0 30px;
+.sub-nav {
+  margin: 0 30px;
 }
 .menu-btn-container {
   display: flex;
@@ -298,6 +290,9 @@ svg {
   border: solid black;
   padding: 5px;
   margin-right: 18px;
+  position: fixed;
+  top: 11px;
+  right:0px;
 }
 .barre {
   min-height: 3px;
@@ -313,11 +308,10 @@ svg {
 }
 nav {
   margin-left: auto;
-  position: absolute;
+  position: fixed;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
   background-color: #87cefa66;
-
 }
 
 .center {
@@ -326,7 +320,6 @@ nav {
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
-  
 }
 .center > * {
   user-select: none;
@@ -488,89 +481,88 @@ img {
     transform: rotateX(360deg) rotateY(720deg);
   }
 }
-@media (min-width : 768px) {
-    .pannel-container {
-        min-height: 85vh; 
+@media (min-width: 768px) {
+  .nav {
+    width: 50%;
+  }
+  .pannel-container {
+    min-height: 85vh;
+  }
+  .photo-entreprise {
+    width: 300px;
+  }
+  .photo-frame-entreprise {
+    width: 300px;
+  }
+  .card {
+    position: relative;
+    height: 80%;
+    margin-bottom: 50px;
+  }
+  .center {
+    left: 43%;
+    bottom: 5px;
+  }
+  .photo-frame {
+    margin: 10vh auto;
+  }
+
+  .face {
+    width: 180px;
+    height: 180px;
+  }
+  @keyframes spintop {
+    from {
+      transform: rotateX(0) translateZ(0);
     }
-    .photo-entreprise{
-        width: 300px;
+    to {
+      transform: rotateX(90deg) translateZ(90px);
     }
-    .photo-frame-entreprise{
-        width: 300px;
+  }
+
+  @keyframes spinbottom {
+    from {
+      transform: rotateX(0) translateZ(0);
     }
-    .card{
-        position: relative;
-        height: 80%;
-        margin-bottom: 50px;
+    to {
+      transform: rotateX(-90deg) translateZ(90px);
     }
-    .center{
-        left: 43%;
-        bottom : 5px;
+  }
+
+  @keyframes spinfront {
+    from {
+      transform: rotateX(0deg) translateZ(0);
     }
-    .photo-frame{
-        margin: 10vh auto;
-        
+    to {
+      transform: rotateX(0deg) translateZ(90px);
+    }
+  }
+
+  @keyframes spinleft {
+    from {
+      transform: rotateX(0) translateZ(0) rotateY(0);
+    }
+    to {
+      transform: rotateX(-180deg) translateZ(90px) rotateY(180deg);
+    }
+  }
+
+  @keyframes spinback {
+    from {
+      transform: rotateY(-0) translateZ(0);
     }
 
-    .face{
-        width: 180px;
-        height: 180px;
+    to {
+      transform: rotateY(-90deg) translateZ(90px);
     }
-    @keyframes spintop {
-        from {
-          transform: rotateX(0) translateZ(0);
-        }
-        to {
-          transform: rotateX(90deg) translateZ(90px);
-        }
-      }
-      
-      @keyframes spinbottom {
-        from {
-          transform: rotateX(0) translateZ(0);
-        }
-        to {
-          transform: rotateX(-90deg) translateZ(90px);
-        }
-      }
-      
-      @keyframes spinfront {
-        from {
-          transform: rotateX(0deg) translateZ(0);
-        }
-        to {
-          transform: rotateX(0deg) translateZ(90px);
-        }
-      }
-      
-      @keyframes spinleft {
-        from {
-          transform: rotateX(0) translateZ(0) rotateY(0);
-        }
-        to {
-          transform: rotateX(-180deg) translateZ(90px) rotateY(180deg);
-        }
-      }
-      
-      @keyframes spinback {
-        from {
-          transform: rotateY(-0) translateZ(0);
-        }
-      
-        to {
-          transform: rotateY(-90deg) translateZ(90px);
-        }
-      }
-      
-      @keyframes spinright {
-        from {
-          transform: rotateY(0) translateZ(0);
-        }
-        to {
-          transform: rotateY(90deg) translateZ(90px);
-        }
-      }
-    
+  }
+
+  @keyframes spinright {
+    from {
+      transform: rotateY(0) translateZ(0);
+    }
+    to {
+      transform: rotateY(90deg) translateZ(90px);
+    }
+  }
 }
-
-

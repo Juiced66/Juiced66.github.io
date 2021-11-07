@@ -45,8 +45,10 @@ let style = {
     transitionDuration : `${duration}ms`,
     transitionProperty : 'opacity transform',
     background : '#87cefa66',
-    width:`${viewportWidth}%`,
-    marginLeft:'auto'
+    width:`100%`,
+    // marginLeft:'auto',
+    transform :'translateX(0vw)'
+    
 }
 if (state !== VISIBLE){
     style.opacity = 0
