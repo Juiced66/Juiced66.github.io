@@ -10,24 +10,23 @@ import Title from "./components/Utils/Title";
 import NavItems from "./components/nav/NavItems";
 // import More from "./components/More";
 
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import Translate from "./components/Utils/Translate";
 
 function App() {
   //window size tracking
 
-  const [width, setWindowWidth] = useState(0)
-  useEffect(() => { 
-
+  const [width, setWindowWidth] = useState(0);
+  useEffect(() => {
     updateDimensions();
 
     window.addEventListener("resize", updateDimensions);
-    return () => 
-      window.removeEventListener('resize',updateDimensions);
-   }, [])
-   const updateDimensions = () => {
-     const width = window.innerWidth
-     setWindowWidth(width)
-   }
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
 
   //I don't have an online API so I first set my initialState in an array
   const pannels = [
@@ -62,60 +61,90 @@ function App() {
   ];
 
   const [menuVisible, setMenuVisible] = useState(false);
-  const toggleMenu = async () => {
-    await setMenuVisible(!menuVisible);
-  };
+  const toggleMenu = () => setMenuVisible((m) => !m);
 
   const [value, setValue] = useState(0);
   const { title, pannelValue } = pannels[value];
 
   return (
     <div className="App">
-      <Header clickHandler={() => toggleMenu()} open={menuVisible} mobile={width <= 768}/>
+      <Header
+        clickHandler={() => toggleMenu()}
+        open={menuVisible}
+        mobile={width <= 768}
+      />
       <div className="fake-header"></div>
-      {width <= 768 && menuVisible ? (
-        <nav>
-          {pannels.map((pannel, index) => {
-            return (
-              <NavItems
-                key={`navItem-${index}`}
-                value={pannel.title}
-                clickHandler={() => {
-                  setValue(index);
-                  toggleMenu();
-                }}
-              />
-            );
-          })}
-        </nav>
-      ) : (
-        ""
+      {width <= 640 && (
+        <Translate visible={menuVisible}>
+          <nav>
+            {pannels.map((pannel, index) => {
+              return (
+                <Translate visible={menuVisible} duration={500}>
+                  <NavItems
+                    key={`navItem-${index}`}
+                    value={pannel.title}
+                    clickHandler={() => {
+                      setValue(index);
+                      toggleMenu();
+                    }}
+                  />
+                </Translate>
+              );
+            })}
+          </nav>
+        </Translate>
+      )}
+
+      {width <= 768 && width >= 640 && (
+        <Translate visible={menuVisible} duration={500} viewportWidth={50}>
+          <nav>
+            {pannels.map((pannel, index) => {
+              return (
+                <Translate
+                  visible={menuVisible}
+                  duration={500}
+                  
+                >
+                  <NavItems
+                    key={`navItem-${index}`}
+                    value={pannel.title}
+                    clickHandler={() => {
+                      setValue(index);
+                      toggleMenu();
+                    }}
+                  />
+                </Translate>
+              );
+            })}
+          </nav>
+        </Translate>
       )}
 
       <section>
-          {<Title value={title} />}
-        <div className="pannel-container">
-          {pannelValue}
-        </div>
-        {menuVisible ? "" : <div >
-          <div
-            className="left-arrow"
-            onClick={() => {
-              value > 0 ? setValue(value - 1) : setValue(pannels.length - 1);
-            }}
-          >
-            🢀
+        {<Title value={title} />}
+        <div className="pannel-container">{pannelValue}</div>
+        {menuVisible ? (
+          ""
+        ) : (
+          <div>
+            <div
+              className="left-arrow"
+              onClick={() => {
+                value > 0 ? setValue(value - 1) : setValue(pannels.length - 1);
+              }}
+            >
+              🢀
+            </div>
+            <div
+              className="right-arrow"
+              onClick={() => {
+                value < pannels.length - 1 ? setValue(value + 1) : setValue(0);
+              }}
+            >
+              🢂
+            </div>
           </div>
-          <div
-            className="right-arrow"
-            onClick={() => {
-              value < pannels.length - 1 ? setValue(value + 1) : setValue(0);
-            }}
-          >
-            🢂
-          </div>
-        </div>}
-        
+        )}
       </section>
     </div>
   );

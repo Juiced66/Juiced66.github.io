@@ -129,7 +129,7 @@ table {
 
 :root {
   /* Les variables permettent de stocker des valeurs utilisables plus loin */
-  --nav:#006494;
+  --nav:#808080;
   --fond: #87cefa;
   --black: #333;
   --couleur-claire: #f0ffff;
@@ -204,12 +204,13 @@ button {
   border-radius: 5px;
   box-shadow: -2px 0px 0px #333, 2px 0px 0px #333;
   font-size: 18px;
-  margin: 10px 10px 10px 10px;
-  padding: 5px;
+  margin: 10px 5;
   text-align: center;
-  
+  transition: all 2s;
 }
-
+button{
+  width: 100%;
+}
 .pannel-container {
   width: 70%;
   margin: 0 auto;
@@ -267,8 +268,8 @@ svg {
   vertical-align: middle;
 }
 .photo-frame {
-  width: 40vw;
-  margin: 25px auto;
+  width: 50vw;
+  margin: 10px auto;
   
 }
 .photo-frame-entreprise{
@@ -281,7 +282,7 @@ svg {
 .photo {
   border-radius: 50%;
   margin: 0 auto;
-  max-width: 40vw;
+  max-width: 50vw;
 }
 .sub-nav{
     margin: 0 30px;
@@ -311,11 +312,14 @@ svg {
   transform: rotateZ(50%);
 }
 nav {
-  display: flex;
+  margin-left: auto;
+  position: absolute;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  background-color: #87cefa66;
+
 }
+
 .center {
   margin-top: 10px;
   width: 90%;
@@ -568,4 +572,5 @@ img {
       }
     
 }
+
 

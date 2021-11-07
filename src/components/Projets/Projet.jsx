@@ -14,7 +14,7 @@ export default function Projet(props) {
         })}
       </ul>
 
-      <div>
+      <div className="photo-frame">
         <img src={props.preview} alt="preview projet" />
       </div>
     </div>
