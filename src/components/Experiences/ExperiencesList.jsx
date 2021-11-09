@@ -8,7 +8,7 @@ import resto from "../../img/resto.jpg";
 
 import { useState } from "react";
 
-export default function ExperiencesList() {
+export default function ExperiencesList({mobile}) {
   const experiences = [
     {
       poste: "Developpeur Frontend",
@@ -60,7 +60,7 @@ export default function ExperiencesList() {
 
   const { poste, date, entreprise, description, image } = experiences[value];
 
-  return (
+  return mobile ? (
     <>
       <div className="subMenu hidden-mobile">
         {experiences.map((exp, index) => {
@@ -92,7 +92,8 @@ export default function ExperiencesList() {
             🢂
           </div>
         </div>
-        <div className='column space-around'>
+        
+        <div className="column space-around">
           <Experience
             poste={poste}
             date={date}
@@ -102,6 +103,30 @@ export default function ExperiencesList() {
           />
         </div>
       </div>
+    </>
+  ) : (
+    <>
+      <div className="subMenu">
+        {experiences.map((exp, index) => {
+          return (
+            <NavItems
+              key={`navItem-${index}`}
+              value={exp.entreprise}
+              clickHandler={() => setValue(index)}
+            />
+          );
+        })}
+      </div>
+      <div className="pannel-data card">
+      <div className="column space-around">
+        <Experience
+          poste={poste}
+          date={date}
+          entreprise={entreprise}
+          description={description}
+          image={image}
+        />
+      </div></div>
     </>
   );
 }

@@ -192,14 +192,16 @@ h1 {
 h1 {
   font-weight: 700;
 }
-
+h2{
+  margin-top: 20px ;
+}
 h2,
 button {
   background: var(--couleur-claire);
   border-radius: 5px;
   box-shadow: -2px 0px 0px #333, 2px 0px 0px #333;
   font-size: 18px;
-  margin: 10px 5;
+  margin: 10px 5px;
   text-align: center;
   transition: all 2s;
 }
@@ -481,12 +483,29 @@ img {
     transform: rotateX(360deg) rotateY(720deg);
   }
 }
-@media (min-width: 768px) {
-  .nav {
+@media (min-width: 769px) {
+  nav {
+    position: sticky;
+    position: -webkit-sticky;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: -5px auto;
+    top:0;
+    background: none;
+  }
+  .subMenu{
     width: 50%;
+    margin: 30px;
+  }
+  .button{
+    margin: 10px !important;
   }
   .pannel-container {
     min-height: 85vh;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 60px;
   }
   .photo-entreprise {
     width: 300px;
@@ -504,6 +523,7 @@ img {
     bottom: 5px;
   }
   .photo-frame {
+    width: auto;
     margin: 10vh auto;
   }
 

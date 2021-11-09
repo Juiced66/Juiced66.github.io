@@ -7,6 +7,7 @@ import ExperiencesList from "./components/Experiences/ExperiencesList";
 import FormationsList from "./components/Formations/FormationsList";
 import ProjetsList from "./components/Projets/ProjetsList";
 import Title from "./components/Utils/Title";
+
 import NavItems from "./components/nav/NavItems";
 // import More from "./components/More";
 
@@ -39,7 +40,7 @@ function App() {
     },
     {
       title: "Expériences",
-      pannelValue: <ExperiencesList />,
+      pannelValue: <ExperiencesList mobile={width <= 768}/>,
     },
     {
       title: "Formation",
@@ -65,17 +66,25 @@ function App() {
   const [value, setValue] = useState(0);
   const { title, pannelValue } = pannels[value];
 
-  // let [navStyle, setNavStyle] = useState({width : '100%'})
-  
-  // useEffect(() => {
-  //   if(!menuVisible) setNavStyle({width:'100%'})
-  //   if(menuVisible){
-  //     const timer = setTimeout(() => {
-  //       setNavStyle({width:"50%"}) 
-  //     }, 1000);
-  //     return () => clearTimeout(timer)
-  //     }
-  // }, [menuVisible]);
+  if(width >= 769){
+    return (
+      <div className="App" >
+        <Header
+        clickHandler={() => toggleMenu()}
+        open={menuVisible}
+        mobile={width <= 768}
+        pannels={pannels}
+        setValue={setValue}
+      />
+        <div className="fake-header"></div>
+        
+        <section>
+        {<Title value={title} />}
+        <div className="pannel-container">{pannelValue}</div> 
+      </section>
+      </div>
+    )
+  }
   
   
   return (
@@ -86,26 +95,6 @@ function App() {
         mobile={width <= 768}
       />
       <div className="fake-header"></div>
-      {/* {width <= 768 && (
-        <Translate visible={menuVisible}>
-          <nav>
-            {pannels.map((pannel, index) => {
-              return (
-                <Translate visible={menuVisible} duration={500}>
-                  <NavItems
-                    key={`navItem-${index}`}
-                    value={pannel.title}
-                    clickHandler={() => {
-                      setValue(index);
-                      toggleMenu();
-                    }}
-                  />
-                </Translate>
-              );
-            })}
-          </nav>
-        </Translate>
-      )} */}
 
       {width <= 768 && (
         <Translate visible={menuVisible} duration={1000} viewportWidth={50}>
@@ -114,9 +103,7 @@ function App() {
               return (
                 <Translate
                   visible={menuVisible}
-                  duration={500}
-                  
-                  
+                  duration={500}  
                 >
                   <NavItems
                     key={`navItem-${index}`}

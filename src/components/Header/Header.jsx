@@ -1,6 +1,7 @@
 import React from "react";
+import Nav from "../nav/Nav";
 
-export default function Header({ clickHandler, open, mobile }) {
+export default function Header({ clickHandler, open, mobile,pannels,setValue }) {
   if (!mobile) {
     return (
       <header>
@@ -9,6 +10,7 @@ export default function Header({ clickHandler, open, mobile }) {
           <h1>Developpeur Web junior</h1>
           <div className="h1">Julien Decosse</div>
         </div>
+        <Nav pannels={pannels} handleClick={setValue}/>
       </header>
     );
   }
