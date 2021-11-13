@@ -1,3 +1,2 @@
-Version 2 du CV
-
-One Page React avec composants fonctionnels
+# CV
+Hi everyone, here is my HTML/CSS/JS CV. Thank you for watching
