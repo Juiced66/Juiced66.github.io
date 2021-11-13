@@ -3,7 +3,7 @@
 
 
 :root {
-    /* Les variables permettent de stoquer des valeurs utilisables plus loin */
+    /* Les variables permettent de stocker des valeurs utilisables plus loin */
     --fond:	#87CEFA;
     --couleur-claire: azure;
     --black:#333;
@@ -96,6 +96,9 @@ i{
     margin-right: 5px;
 	text-shadow: -2px 0px 0px var(--couleur-claire);
 	vertical-align: middle;
+}
+.photo{
+	border-radius: 50%;
 }
 
 /*          --- Framework ---            */
@@ -338,7 +341,7 @@ em{
 	      }
 
 	      button {
-
+		  cursor: pointer;
 	      background: none;
 	      border: 4px solid  var(--couleur-claire);
 	      display: block;
