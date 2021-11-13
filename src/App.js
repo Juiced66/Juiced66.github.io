@@ -44,7 +44,7 @@ function App() {
     },
     {
       title: "Formation",
-      pannelValue: <FormationsList />,
+      pannelValue: <FormationsList  mobile={width <= 768} />,
     },
     {
       title: "Projets",

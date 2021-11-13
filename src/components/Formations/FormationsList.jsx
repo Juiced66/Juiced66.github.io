@@ -1,5 +1,6 @@
 import React from "react";
 import Formation from "./Formation";
+import NavItems from "../nav/NavItems";
 import idem from "../../img/idem.png"
 import cciNimes from "../../img/cciNimes.png"
 import dhuoda from "../../img/dhuoda.png"
@@ -7,7 +8,7 @@ import cfaCci from "../../img/cfaCci.png"
 
 import { useState } from "react";
 
-export default function FormationsList() {
+export default function FormationsList({mobile}) {
   const formations = [
     {
       diplome: "Titre niveau 5 : Developpeur Web et Mobile",
@@ -41,7 +42,32 @@ export default function FormationsList() {
   const [value, setValue] = useState(0);
 
   const { diplome, date, ecole, detail, image } = formations[value];
-
+  if(!mobile){
+    return (
+    <>
+      <div className="subMenu">
+        {formations.map((form, index) => {
+          return (
+            <NavItems
+              key={`navItem-${index}`}
+              value={form.diplome}
+              clickHandler={() => setValue(index)}
+            />
+          );
+        })}
+      </div>
+      <div className="pannel-data card">
+      <div className="column space-around">
+        <Formation
+          diplome={diplome}
+          date={date}
+          ecole={ecole}
+          detail={detail}
+          image={image}
+        />
+      </div></div>
+    </>)
+  }
   return (
     <div className="card pannel-data">
       <div className="center flex">

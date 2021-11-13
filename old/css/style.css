@@ -341,7 +341,7 @@ em{
 	      }
 
 	      button {
-
+		  cursor: pointer;
 	      background: none;
 	      border: 4px solid  var(--couleur-claire);
 	      display: block;
