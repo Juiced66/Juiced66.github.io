@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.5740677e.chunk.css",
-    "main.js": "/static/js/main.c198a2e2.chunk.js",
-    "main.js.map": "/static/js/main.c198a2e2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.fd901ed9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.fd901ed9.js.map",
-    "static/js/2.0af08414.chunk.js": "/static/js/2.0af08414.chunk.js",
-    "static/js/2.0af08414.chunk.js.map": "/static/js/2.0af08414.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.5740677e.chunk.css.map": "/static/css/main.5740677e.chunk.css.map",
-    "static/js/2.0af08414.chunk.js.LICENSE.txt": "/static/js/2.0af08414.chunk.js.LICENSE.txt",
-    "static/media/Avatar.53d36cc9.png": "/static/media/Avatar.53d36cc9.png",
-    "static/media/cciNimes.d594a1e5.png": "/static/media/cciNimes.d594a1e5.png",
-    "static/media/previewChat.ba22107d.jpg": "/static/media/previewChat.ba22107d.jpg",
-    "static/media/previewCube.3d8160c0.jpg": "/static/media/previewCube.3d8160c0.jpg",
-    "static/media/pyrescom.d0fd8b07.png": "/static/media/pyrescom.d0fd8b07.png",
-    "static/media/resto.6b6d672c.jpg": "/static/media/resto.6b6d672c.jpg"
+    "main.css": "./static/css/main.42c009f0.chunk.css",
+    "main.js": "./static/js/main.224c8d8c.chunk.js",
+    "main.js.map": "./static/js/main.224c8d8c.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.412ca5c2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.412ca5c2.js.map",
+    "static/js/2.d1f061f9.chunk.js": "./static/js/2.d1f061f9.chunk.js",
+    "static/js/2.d1f061f9.chunk.js.map": "./static/js/2.d1f061f9.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.42c009f0.chunk.css.map": "./static/css/main.42c009f0.chunk.css.map",
+    "static/js/2.d1f061f9.chunk.js.LICENSE.txt": "./static/js/2.d1f061f9.chunk.js.LICENSE.txt",
+    "static/media/Avatar.53d36cc9.png": "./static/media/Avatar.53d36cc9.png",
+    "static/media/cciNimes.d594a1e5.png": "./static/media/cciNimes.d594a1e5.png",
+    "static/media/previewChat.ba22107d.jpg": "./static/media/previewChat.ba22107d.jpg",
+    "static/media/previewCube.3d8160c0.jpg": "./static/media/previewCube.3d8160c0.jpg",
+    "static/media/pyrescom.d0fd8b07.png": "./static/media/pyrescom.d0fd8b07.png",
+    "static/media/resto.6b6d672c.jpg": "./static/media/resto.6b6d672c.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fd901ed9.js",
-    "static/js/2.0af08414.chunk.js",
-    "static/css/main.5740677e.chunk.css",
-    "static/js/main.c198a2e2.chunk.js"
+    "static/js/runtime-main.412ca5c2.js",
+    "static/js/2.d1f061f9.chunk.js",
+    "static/css/main.42c009f0.chunk.css",
+    "static/js/main.224c8d8c.chunk.js"
   ]
 }
