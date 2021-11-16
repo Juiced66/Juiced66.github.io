@@ -5,6 +5,8 @@ import idem from "../../img/idem.png"
 import cciNimes from "../../img/cciNimes.png"
 import dhuoda from "../../img/dhuoda.png"
 import cfaCci from "../../img/cfaCci.png"
+import {faAngleDoubleRight, faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useState } from "react";
 
@@ -76,14 +78,14 @@ export default function FormationsList({mobile}) {
             value > 0 ? setValue(value - 1) : setValue(formations.length - 1);
           }}
         >
-          🢀
+          <FontAwesomeIcon icon={faAngleDoubleLeft} />
         </div>
         <div
           onClick={() => {
             value < formations.length - 1 ? setValue(value + 1) : setValue(0);
           }}
         >
-          🢂
+          <FontAwesomeIcon icon={faAngleDoubleRight} />
         </div>
       </div>
       <div className="space-around column">

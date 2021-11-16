@@ -5,6 +5,9 @@ import meetdeal from "../../img/meetdeal.png";
 import haxeDirect from "../../img/haxeDirect.png";
 import pyrescom from "../../img/pyrescom.png";
 import resto from "../../img/resto.jpg";
+import {faAngleDoubleRight, faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import { useState } from "react";
 
@@ -80,7 +83,7 @@ export default function ExperiencesList({mobile}) {
               if (value > 0) setValue(value - 1);
             }}
           >
-            🢀
+            <FontAwesomeIcon icon={faAngleDoubleLeft} />
           </div>
           <div
             onClick={() => {
@@ -89,7 +92,7 @@ export default function ExperiencesList({mobile}) {
                 : setValue(0);
             }}
           >
-            🢂
+            <FontAwesomeIcon icon={faAngleDoubleRight} />
           </div>
         </div>
         

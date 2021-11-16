@@ -7,7 +7,8 @@ import ExperiencesList from "./components/Experiences/ExperiencesList";
 import FormationsList from "./components/Formations/FormationsList";
 import ProjetsList from "./components/Projets/ProjetsList";
 import Title from "./components/Utils/Title";
-
+import {faAngleDoubleRight, faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavItems from "./components/nav/NavItems";
 // import More from "./components/More";
 
@@ -133,7 +134,7 @@ function App() {
                 value > 0 ? setValue(value - 1) : setValue(pannels.length - 1);
               }}
             >
-              🢀
+              <FontAwesomeIcon icon={faAngleDoubleLeft} />
             </div>
             <div
               className="right-arrow"
@@ -141,7 +142,7 @@ function App() {
                 value < pannels.length - 1 ? setValue(value + 1) : setValue(0);
               }}
             >
-              🢂
+              <FontAwesomeIcon icon={faAngleDoubleRight} />
             </div>
           </div>
         )}
